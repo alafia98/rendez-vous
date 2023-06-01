@@ -26,7 +26,9 @@ Route::middleware([
 
 Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/', [HomeController::class, 'index']); 
-Route::post('/lgout', [HomeController::class, 'logout']); 
+Route::post('/lgout', [HomeController::class, 'logout']);
+
+Route::get('/prendre_index', [HomeController::class, 'prendre_index']);
 
 
 Route::get('/show_lieu', [AdminController::class, 'show_lieu']);
