@@ -24,8 +24,8 @@ class HomeController extends Controller
             $calendrier = Calendrier::all();
             return view('admin.dashboard', compact('lieu', 'filiere', 'etudiant', 'rendezvous', 'calendrier'));
         } else {
-            $filiere = Filiere::all();
-            return view('user.home', compact('filiere'));
+            $calendrier = Calendrier::all();
+            return view('user.home', compact('calendrier'));
         }
 
     }
@@ -34,13 +34,13 @@ class HomeController extends Controller
 
             return redirect('redirect');
         } else {
-            $filiere = Filiere::all();
-            return view('user.home', compact('filiere'));
+            $calendrier = Calendrier::all();
+            return view('user.home', compact('calendrier'));
         }
     }
     public function logout() {
-        $filiere = Filiere::all();
-        return vieww('user.home', compact('filiere'));
+        $calendrier = Calendrier::all();
+        return vieww('user.home', compact('calendrier'));
     }
 
     // public function create_rendezvous(Request $request) {

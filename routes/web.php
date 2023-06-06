@@ -15,10 +15,10 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::middleware([
-    'auth:sanctum',
+    'auth:sanctum', 'setapplang',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {
+])->prefix('{locale}')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
