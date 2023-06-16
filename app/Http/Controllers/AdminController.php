@@ -8,6 +8,7 @@ use App\Models\Filiere;
 use App\Models\Etudiant;
 use App\Models\Calendrier;
 use App\Models\Rendezvous;
+use App\Helpers\Helper;
 
 class AdminController extends Controller
 {
@@ -196,7 +197,7 @@ class AdminController extends Controller
     }
     public function upload_rendezvous(Request $request) {
         $rendezvous = new Rendezvous;
-        $rendezvous->code_rdv = $request->code_rdv;
+        $rendezvous->code_rdv = Helper::IDGenerator(new Rendezvous, 'code_rdv', 4, '');
         $rendezvous->id_cal = $request->id_cal;
         $rendezvous->id_etd = $request->id_etd;
         $rendezvous->save();

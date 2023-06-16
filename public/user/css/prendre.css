@@ -1,0 +1,72 @@
+section {
+    height: 80vh;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section .title {
+    text-align:center;
+    color: #00549F;
+    font-style: italic;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    margin: -2% auto 2% auto;
+}
+
+section form {
+    background-image: linear-gradient(to right, #92ccff, white, #92ccff);
+    padding: 1%;
+    padding-right: 3%;
+    width:70vw;
+    height: 60vh;
+    text-align:center;
+    border-radius: 50px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+section form .body {
+    display: flex;
+    justify-content: space-between;
+}
+
+section form .body .card1 {
+    display:flex;
+    flex-direction:column;
+}
+
+section form .body .card1 div {
+    margin:1% auto;
+    display: flex;
+    justify-content: space-between;
+    width: 25vw;
+}
+
+section form .body .card1 div label {
+    font-weight:bold;
+}
+
+section form .body .card1 div select {
+    width:45%;
+}
+
+section form .body .card2 h4 {
+    text-align:center;
+}
+
+section form .body .card2 ol li {
+    font-size:1.2rem;
+    text-align: right;
+}
+
+section form .button .btn{
+    color: white;
+    background-color: #00549F;
+    border: none;
+    border-radius: 50px;
+    width: 10vw;
+    margin-top: 2%;
+    margin-left: 5%;
+}

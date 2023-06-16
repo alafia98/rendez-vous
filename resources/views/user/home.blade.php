@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar", dir="rtl">
 @include('user.css')
-<body style="display: flex; flex-direction:column;min-height:100vh">
+<body>
     @include('user.navbar')
 
-    @include('user.body')
+    @include('user.index')
     
     @include('user.script')
 </body>

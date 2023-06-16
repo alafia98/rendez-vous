@@ -40,11 +40,6 @@
                                 <div class="card-body">								
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="mb-3">
-                                                <label for="code_rdv">Code Rendez-vous</label>
-                                                <input value="{{$rendezvous->code_rdv}}" type="text" name="code_rdv" id="code_rdv" class="form-control" style="color: black">	
-                                            </div>
-                                        </div>
                                         <div class="col-md-6">
                                             <label for="id_cal">Calendrier</label>
                                             <select name="id_cal" id="id_cal" class="form-control" style="color:white">

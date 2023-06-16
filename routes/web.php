@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +16,10 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::middleware([
-    'auth:sanctum', 'setapplang',
+    'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->prefix('{locale}')->group(function () {
+])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -28,7 +29,12 @@ Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/', [HomeController::class, 'index']); 
 Route::post('/lgout', [HomeController::class, 'logout']);
 
-Route::get('/prendre_index', [HomeController::class, 'prendre_index']);
+
+Route::get('/create_std', [HomeController::class, 'create_std']);
+Route::post('/upload_std', [HomeController::class, 'upload_std']);
+Route::get('/prendre_rdv', [HomeController::class, 'prendre_rdv']);
+Route::post('/create_rdv', [HomeController::class, 'create_rdv']);
+Route::get('/confirmation', [HomeController::class, 'confirmation']);
 
 
 Route::get('/show_lieu', [AdminController::class, 'show_lieu']);

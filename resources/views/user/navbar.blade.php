@@ -1,4 +1,17 @@
 <nav class="navbar navbar-expand-lg">
+    <a href="{{url('/')}}"><img class="logo" src="{{asset('user/img/facultélogo.png')}}" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="nav collapse navbar-collapse" id="navbarSupportedContent">
+        <a href="{{url('/')}}">الصفحة الرئيسية</a>
+        <a href="{{url('create_std')}}">أخذ موعد</a>
+        <a href="#">تتبع مواعيدي</a>
+      </div>
+      <a href="{{ route('login') }}">اللغة</a>    
+</nav>
+
+{{-- <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{url('/')}}"><img src="{{asset('user/img/facultélogo.png')}}" alt="logo" style="height:50px; width:80px"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,25 +31,9 @@
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-            @if (Route::has('login'))
-                @auth
-                    <form action="{{ url('logout') }}" method="post">
-                        @csrf
-                        <input type="submit" value="Log out">
-                    </form>
-                @else
-                <li class="nav-item">
-                    <a href="{{ route('login') }}"  class="nav-link">Log in</a>
-                </li>
-                    @if (Route::has('register'))
-                    <li class="nav-item">
-                        <a href="{{ route('register') }}"  class="nav-link">Register</a>
-                    </li>
-                    @endif
-                @endauth
-            @endif
+              <a href="{{ route('login') }}"  class="nav-link">Langue</a>
             </li>
         </ul>
       </div>
     </div>
-</nav>
+</nav> --}}
