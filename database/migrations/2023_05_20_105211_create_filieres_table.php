@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('calendrier', function (Blueprint $table) {
+        Schema::create('filieres', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->time('heure_debut');
-            $table->time('heure_fin');
-            $table->foreignId(column: 'id_fil')->constrained(table: 'filieres')->cascadeOnDelete();
+            $table->string('nom_fr')->nullable();
+            $table->string('nom_ar')->nullable();
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('calendrier');
+        Schema::dropIfExists('filieres');
     }
 };

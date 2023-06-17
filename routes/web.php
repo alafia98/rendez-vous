@@ -15,6 +15,7 @@ use Haruncpi\LaravelIdGenerator\IdGenerator;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,13 +30,13 @@ Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/', [HomeController::class, 'index']); 
 Route::post('/lgout', [HomeController::class, 'logout']);
 
-
-Route::get('/create_std', [HomeController::class, 'create_std']);
-Route::post('/upload_std', [HomeController::class, 'upload_std']);
 Route::get('/prendre_rdv', [HomeController::class, 'prendre_rdv']);
 Route::post('/create_rdv', [HomeController::class, 'create_rdv']);
-Route::get('/confirmation', [HomeController::class, 'confirmation']);
+Route::get('/get-lieus/{id_fil}', [HomeController::class, 'getLieus']);
+Route::get('/get-dates/{id_lieu}', [HomeController::class, 'getDates']);
+Route::get('/get-times/{id_date}', [HomeController::class, 'getTimes']);
 
+Route::get('/confirmation/{id}', [HomeController::class, 'confirmation'])->name('user.prendre.confirmation');
 
 Route::get('/show_lieu', [AdminController::class, 'show_lieu']);
 Route::get('/show_filiere', [AdminController::class, 'show_filiere']);

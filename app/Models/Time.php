@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Filiere extends Model
+class Time extends Model
 {
     use HasFactory;
-    
-    public function lieu()
+
+    public function date()
     {
-        return $this->hasMany(Lieu::class, 'id_fil', 'id');
+        return $this->belongsTo(Time::class, 'id_date', 'id');
     }
-    
 }

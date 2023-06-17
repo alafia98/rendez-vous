@@ -8,25 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Rendezvous extends Model
 {
     use HasFactory;
-    protected $table = 'rendezvous';
-    protected $fillable = [
-        'code_rdv',
-        'status',
-        'id_cal',
-        'id_etd'
 
-    ];
+    public function filiere() {
+        return $this->hasOne(Filiere::class, 'id', 'id_fil');
+    }
 
-    public function calendrier()
-    {
-        return $this->belongsTo(Calendrier::class, 'id_cal', 'id');
-    }
-    public function etudiant()
-    {
-        return $this->belongsTo(Etudiant::class, 'id_etd', 'id');
-    }
-    public function recu()
-    {
-        return $this->belongsTo(Recus::class, 'id_rdv', 'id');
+    public function time() {
+        return $this->hasOne(Time::class, 'id', 'id_time');
     }
 }

@@ -8,8 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Lieu extends Model
 {
     use HasFactory;
+    
     public function filiere()
     {
-        return $this->hasMany(Filiere::class, 'id_lieu', 'id');
+        return $this->belongsTo(Lieu::class, 'id_fil', 'id');
+    }
+    public function date()
+    {
+        return $this->hasMany(Date::class, 'id_lieu', 'id');
     }
 }

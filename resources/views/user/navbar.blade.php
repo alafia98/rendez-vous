@@ -5,7 +5,7 @@
     </button>
       <div class="nav collapse navbar-collapse" id="navbarSupportedContent">
         <a href="{{url('/')}}">الصفحة الرئيسية</a>
-        <a href="{{url('create_std')}}">أخذ موعد</a>
+        <a href="{{url('prendre_rdv')}}">أخذ موعد</a>
         <a href="#">تتبع مواعيدي</a>
       </div>
       <a href="{{ route('login') }}">اللغة</a>    

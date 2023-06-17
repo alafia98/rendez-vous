@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('filieres', function (Blueprint $table) {
+        Schema::create('dates', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_fr')->nullable();
-            $table->string('nom_ar')->nullable();
+            $table->date('date')->nullable();
             $table->foreignId(column: 'id_lieu')->constrained(table: 'lieus')->cascadeOnDelete();
             $table->timestamps();
         });
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('filieres');
+        Schema::dropIfExists('dates');
     }
 };

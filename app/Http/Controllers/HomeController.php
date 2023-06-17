@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Lieu;
 use App\Models\Filiere;
-use App\Models\Etudiant;
 use App\Models\Rendezvous;
-use App\Models\Calendrier;
+use App\Models\Date;
+use App\Models\Time;
 use App\Helpers\Helper;
 
 class HomeController extends Controller
@@ -35,83 +35,52 @@ class HomeController extends Controller
 
             return redirect('redirect');
         } else {
-            $calendrier = Calendrier::all();
-            return view('user.home', compact('calendrier'));
+            $filiere = Filiere::all();
+            return view('user.home', compact('filiere'));
         }
     }
+
     public function logout() {
         $calendrier = Calendrier::all();
         return vieww('user.home', compact('calendrier'));
     }
 
-    public function create_std() {
-        $filiere = Filiere::all();
-        $lieu = Lieu::all();
-        $calendrier = Calendrier::all();
-        return view('user.prendre.create_std', compact('filiere', 'lieu', 'calendrier'));
-    }
-
-    public function upload_std(Request $request) {
-        $etudiant = new Etudiant;
-        $etudiant->cin = $request->cin;
-        $etudiant->cne = $request->cne;
-        $etudiant->nom_fr = $request->nom_fr;
-        $etudiant->prenom_fr = $request->prenom_fr;
-        $etudiant->nom_ar = $request->nom_ar;
-        $etudiant->prenom_ar = $request->prenom_ar;
-        $etudiant->telephone = $request->telephone;
-        $etudiant->email = $request->email;
-        $etudiant->adresse = $request->adresse;
-        $etudiant->id_fil = $request->id_fil;
-        $etudiant->save();
-        return redirect()->back()->with('message', 'Filière Created Successfully');
-    }
 
     public function prendre_rdv() {
-        $calendrier = Calendrier::all();
-        $etudiant = Etudiant::all();
-        $lieu = Lieu::all();
-        $filiere = Filiere::all();
-        return view('user.prendre.prendre_rdv', compact('calendrier', 'filiere', 'etudiant', 'lieu'));
+        $filieres = Filiere::all();
+        return view('user.prendre.prendre_rdv', compact('filieres', 'rendezvous'));
+    }
+    public function getLieus($idFil) {
+        $lieus = Lieu::where('id_fil', $idFil)->get();
+        return response()->json($lieus);
+    }
+    public function getDates($idLieu) {
+        $dates = Date::where('id_lieu', $idLieu)->get();
+        return response()->json($dates);
+    }
+    public function getTimes($idDate) {
+        $times = Time::where('id_date', $idDate)->get();
+        return response()->json($times);
     }
 
     public function create_rdv(Request $request) {
         $rendezvous = new Rendezvous;
         $rendezvous->code_rdv = Helper::IDGenerator(new Rendezvous, 'code_rdv', 4, '');
-        $rendezvous->id_cal = $request->id_cal;
-        $rendezvous->id_etd = $request->id_etd;
+        $rendezvous->cin = $request->cin;
+        $rendezvous->cne = $request->cne;
+        $rendezvous->nom_fr = $request->nom_fr;
+        $rendezvous->prenom_fr = $request->prenom_fr;
+        $rendezvous->nom_ar = $request->nom_ar;
+        $rendezvous->prenom_ar = $request->prenom_ar;
+        $rendezvous->telephone = $request->telephone;
+        $rendezvous->email = $request->email;
+        $rendezvous->id_time = $request->id_time;
         $rendezvous->save();
-        return redirect()->back()->with('message', 'Filière Created Successfully');
+        return redirect()->route('user.prendre.confirmation', $rendezvous->id) ->with('message', 'Filière Created Successfully');
     }
 
-    public function confirmation() {
-        return view('user.prendre.confirmation');
+    public function confirmation($id) {
+        $rendezvous = Rendezvous::findOrFail($id);
+        return view('user.prendre.confirmation', compact('rendezvous'));
     }
-
-    // public function create_rendezvous(Request $request) {
-    //     $rendezvous = new Rendezvous;
-    //     $rendezvous->code_rdv = $request->code_rdv;
-    //     $rendezvous->status = $request->status;
-    //     $rendezvous->id_cal = $request->id_cal;
-    //     $rendezvous->save();
-    //     return redirect()->back()->with('message', 'Filière Created Successfully');
-    // }
-    // public function edit_rendezvous($id) {
-    //     $rendezvous = Rendezvous::find($id);
-    //     $calendrier = Calendrier::all();
-    //     return view('admin.rendezvous.edit', compact('rendezvous', 'calendrier'));
-    // }
-    // public function update_rendezvous(Request $request, $id) {
-    //     $rendezvous = Rendezvous::find($id);
-    //     $rendezvous->code_rdv = $request->code_rdv;
-    //     $rendezvous->status = $request->status;
-    //     $rendezvous->id_cal = $request->id_cal;
-    //     $rendezvous->save();
-    //     return redirect()->back()->with('message', 'Département edited Successfully');
-    // }
-    // public function delete_rendezvous($id) {
-    //     $rendezvous = Rendezvous::find($id);
-    //     $rendezvous->delete();
-    //     return redirect()->back()->with('message', 'Département Deleted Successfully');
-    // }  
 }

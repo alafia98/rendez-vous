@@ -11,12 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rendezvous', function (Blueprint $table) {
+        Schema::create('rendezvouses', function (Blueprint $table) {
             $table->id();
             $table->string('code_rdv')->unique();
             $table->string('status')->default('en attente')->comment('en attente', 'terminé');
-            $table->foreignId(column: 'id_cal')->constrained(table: 'calendrier')->cascadeOnDelete();
-            $table->foreignId(column: 'id_etd')->constrained(table: 'etudiants')->cascadeOnDelete();
+            $table->string('cin')->unique();
+            $table->string('cne')->unique();
+            $table->string('nom_fr');
+            $table->string('prenom_fr');
+            $table->string('nom_ar');
+            $table->string('prenom_ar');
+            $table->string('telephone');
+            $table->string('email');
+            $table->foreignId(column: 'id_time')->constrained(table: 'times')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -26,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rendezvous');
+        Schema::dropIfExists('rendezvouses');
     }
 };

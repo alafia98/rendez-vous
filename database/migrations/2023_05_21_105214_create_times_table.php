@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('lieus', function (Blueprint $table) {
+        Schema::create('times', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_fr')->nullable();
-            $table->string('nom_ar')->nullable();
-            $table->foreignId(column: 'id_fil')->constrained(table: 'filieres')->cascadeOnDelete();
+            $table->time('time')->nullable();
+            $table->foreignId(column: 'id_date')->constrained(table: 'dates')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('lieus');
+        Schema::dropIfExists('times');
     }
 };
