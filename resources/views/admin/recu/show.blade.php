@@ -12,9 +12,6 @@
        <div class="container-fluid page-body-wrapper content-wrapper">
             <div class="container">
                 <!-- Content Header (Page header) -->
-<section class="content-header">					
-    <!-- /.container-fluid -->
-</section>
 <!-- Main content -->
 <section class="content">
     <!-- Default box -->
@@ -50,29 +47,39 @@
                 <div class="card">
                     <div class="card-header pt-3">
                         <div class="row invoice-info">
-                            <div class="col-sm-6 invoice-col">
+                            <div class="col-sm-4 invoice-col">
                                 <h1 class="h5 mb-3">Infos personnelle</h1>
-                                <address>
-                                    <strong>CIN : {{$rendezvous->etudiant->cin}}</strong><br>
-                                    <strong>CNE : {{$rendezvous->etudiant->cne}}</strong><br>
-                                    Nom : {{$rendezvous->etudiant->nom_fr}}<br>
-                                    Prénom : {{$rendezvous->etudiant->prenom_fr}}<br>
-                                    Adresse : {{$rendezvous->etudiant->adresse}}<br>
-                                    Téléphone : {{$rendezvous->etudiant->telephone}}<br>
-                                    E-mail : {{$rendezvous->etudiant->email}}<br>
+                                <address >
+                                    <strong>CIN : </strong><br>
+                                    <strong>CNE : </strong><br>
+                                    Nom : {{$rendezvous->nom_fr}}<br>
+                                    Prénom :{{$rendezvous->prenom_fr}} <br>
+                                    Numéro de téléphone : <br>
+                                    E-mail : <br>
                                 </address>
                             </div>
 
-                            <div class="col-sm-6 invoice-col" style="direction: rtl">
+                            <div class="col-sm-4 invoice-col">
+                                <br>
+                                <address align="center">
+                                    <strong>{{$rendezvous->cin}}</strong><br>
+                                    <strong>{{$rendezvous->cne}}</strong><br>
+                                    <br>
+                                    <br>
+                                    {{$rendezvous->telephone}}<br>
+                                    {{$rendezvous->email}}<br>
+                                </address>
+                            </div>
+
+                            <div class="col-sm-4 invoice-col" style="direction: rtl">
                                 <h1 class="h5 mb-3">المعلومات الشخصية</h1>
                                 <address>
-                                    <strong>رقم البطاقة الوطنية : {{$rendezvous->etudiant->cin}}</strong><br>
-                                    <strong>رقم المسار : {{$rendezvous->etudiant->cne}}</strong><br>
-                                    الاسم العائلي : {{$rendezvous->etudiant->nom_ar}}<br>
-                                    الاسم الشخصي : {{$rendezvous->etudiant->prenom_ar}}<br>
-                                    العنوان : {{$rendezvous->etudiant->adresse}}<br>
-                                    الهاتف : {{$rendezvous->etudiant->telephone}}<br>
-                                    البريد الالكتروني : {{$rendezvous->etudiant->email}}<br>
+                                    <strong>رقم البطاقة الوطنية : </strong><br>
+                                    <strong>رقم المسار : </strong><br>
+                                    الاسم العائلي : {{$rendezvous->nom_ar}}<br>
+                                    الاسم الشخصي : {{$rendezvous->prenom_ar}}<br>
+                                    رقم الهاتف : <br>
+                                    البريد الالكتروني : <br>
                                 </address>
                             </div>
                         </div>
@@ -90,20 +97,31 @@
                         <div class="row invoice-info">
                             <div class="card-header pt-3">
                                 <div class="row invoice-info">
-                                    <div class="col-sm-6 invoice-col">
+                                    <div class="col-sm-4 invoice-col">
                                         <h1 class="h5 mb-3">Infos du rendez-vous</h1>
-                                        <b>code RDV : {{$rendezvous->code_rdv}}</b><br>
-                                        Filière : {{$rendezvous->etudiant->filiere->nom_fr}}<br>
-                                        Lieu : {{$rendezvous->etudiant->filiere->lieu->nom_fr}}<br>
-                                        Horaires : Le {{$rendezvous->calendrier->date}} à {{$rendezvous->calendrier->heure_debut}}<br>
+                                        <b>code RDV :</b><br>
+                                        Filière : Sociologie<br>
+                                        Lieu : Salle 2<br>
+                                        Jour : <br>
+                                        Heure : <br>
+                                    </div>
+
+                                    <div class="col-sm-4 invoice-col" align="center">
+                                        <br>
+                                        <b>RDV-{{$rendezvous->code_rdv}}</b><br>
+                                        <br>
+                                        <br>
+                                        {{$rendezvous->time->date->date}}<br>
+                                        {{$rendezvous->time->time}}<br>
                                     </div>
                                     
-                                    <div class="col-sm-6 invoice-col" style="direction: rtl">
+                                    <div class="col-sm-4 invoice-col" style="direction: rtl">
                                         <h1 class="h5 mb-3">معلومات الموعد</h1>
-                                        <b>رقم الموعد : {{$rendezvous->code_rdv}}</b><br>
-                                        الشعبة : {{$rendezvous->etudiant->filiere->nom_ar}}<br>
-                                        المكان : {{$rendezvous->etudiant->filiere->lieu->nom_ar}}<br>
-                                        التوقيت : يوم {{$rendezvous->calendrier->date}} على الساعة {{$rendezvous->calendrier->heure_debut}}<br>
+                                        <b>رقم الموعد :</b><br>
+                                        الشعبة : علم الإجتماع<br>
+                                        المكان : قاعة 2<br>
+                                        اليوم :<br>
+                                        الساعة :<br>
                                     </div>
                                 </div>
                             </div>                             
@@ -112,13 +130,13 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>
 
     <div class="container-fluid" style="margin-left:10%;">
         <div class="row" style="margin-top:3%;">
             <div class="col-md-9" style="display: flex; justify-content:space-around;">
                 <div>
-                    <button class="btn btn-primary" style="padding:10px; border-radius:50px; width:150px;">Imprimer</button>
+                    <button class="btn btn-primary" style="padding:10px; border-radius:50px; width:150px;" onclick="imprimerPage()">Imprimer</button>
                 </div>
             </div>
         </div>

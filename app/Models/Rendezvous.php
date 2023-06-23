@@ -5,15 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rendezvous extends Model
+class rendezvous extends Model
 {
     use HasFactory;
+    
+    protected $table = 'rendezvouses';
 
-    public function filiere() {
-        return $this->hasOne(Filiere::class, 'id', 'id_fil');
-    }
-
-    public function time() {
-        return $this->hasOne(Time::class, 'id', 'id_time');
+    public function time()
+    {
+        return $this->belongsTo(Time::class, 'id_time');
     }
 }

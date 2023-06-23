@@ -39,20 +39,52 @@
                                 <div class="card-body">								
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <label for="id_cal">Calendrier</label>
-                                            <select name="id_cal" id="id_cal" class="form-control" style="color:white">
-                                                <option selected>Ajouter la Date</option>
-                                                @foreach ($calendrier as $calendrier)
-                                                    <option value="{{$calendrier->id}}">{{$calendrier->date}} de {{$calendrier->heure_debut}} jusqu'à {{$calendrier->heure_fin}}</option>
+                                            <label for="">CIN</label>
+                                            <input type="text" name="cin" id="cin" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">CNE</label>
+                                            <input type="text" name="cne" id="cne" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Nom_fr</label>
+                                            <input type="text" name="nom_fr" id="nom_fr" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Prenom_fr</label>
+                                            <input type="text" name="prenom_fr" id="prenom_fr" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Nom_ar</label>
+                                            <input type="text" name="nom_ar" id="nom_ar" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">Prenom_ar</label>
+                                            <input type="text" name="prenom_ar" id="prenom_ar" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">téléphone</label>
+                                            <input type="number" name="telephone" id="telephone" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">email</label>
+                                            <input type="email" name="email" id="email" class="form-control" style="color: black">	
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="id_fil">Filière</label>
+                                            <select name="id_fil" id="id_fil" class="form-control" style="color:white">
+                                                <option selected>Sélectionner filière</option>
+                                                @foreach ($filieres as $id => $filiere)
+                                                    <option value="{{$id}}">{{$filiere}}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="id_etd">Etudiant</label>
-                                            <select name="id_etd" id="id_etd" class="form-control" style="color:white">
-                                                <option selected>Ajouter étudiant</option>
-                                                @foreach ($etudiant as $etudiant)
-                                                    <option value="{{$etudiant->id}}">{{$etudiant->cin}}</option>
+                                            <label for="id_lieu">Lieu :</label>
+                                            <select name="id_lieu" id="id_lieu" class="form-control" style="color:white">
+                                                <option selected>Sélectionner Lieu</option>
+                                                @foreach ($lieus as $id => $lieu)
+                                                    <option value="{{$id}}">{{$lieu}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

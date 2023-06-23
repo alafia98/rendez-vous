@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Filiere extends Model
+class filiere extends Model
 {
     use HasFactory;
     
-    public function lieu()
+    public function lieus()
     {
-        return $this->hasMany(Lieu::class, 'id_fil', 'id');
+        return $this->hasMany(Lieu::class, 'id_fil');
     }
-    
 }

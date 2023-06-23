@@ -1,8 +1,8 @@
 <footer>
     <div>
-        <a href="#">Téléphone: +212 539 97 90 53</a>
-        <a href="#">E-mail: flsht.contact@gmail.com</a>
-        <a href="#">Addresse: Tétouan B.P.210 Martil Tétouan ,Maroc</a>
+        <a href="#">رقم الهاتف: +212 539 97 90 53</a>
+        <a href="#">البريد الإلكتروني: flsht.contact@gmail.com</a>
+        <a href="#">العنوان: Tétouan B.P.210 Martil Tétouan ,Maroc</a>
     </div>
 </footer>
 
@@ -22,7 +22,7 @@
                     dataType: 'json',
                     success: function (data) {
                         $('#lieu').empty();
-                        $('#lieu').append('<option value="">séléctionner</option>');
+                        $('#lieu').append('<option value="">اختر مكان</option>');
                         $.each(data, function (key, value) {
                             $('#lieu').append('<option value="' + value.id + '">' + value.nom_fr + '</option>');
                         });
@@ -44,7 +44,7 @@
                     dataType: 'json',
                     success: function (data) {
                         $('#date').empty();
-                        $('#date').append('<option value="">séléctionner</option>');
+                        $('#date').append('<option value="">اختر اليوم</option>');
                         $.each(data, function (key, value) {
                             $('#date').append('<option value="' + value.id + '">' + value.date + '</option>');
                         });
@@ -65,7 +65,7 @@
                     dataType: 'json',
                     success: function (data) {
                         $('#time').empty();
-                        $('#time').append('<option value="">séléctionner</option>');
+                        $('#time').append('<option value="">اختر الساعة</option>');
                         $.each(data, function (key, value) {
                             $('#time').append('<option value="' + value.id + '">' + value.time + '</option>');
                         });

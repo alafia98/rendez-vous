@@ -19,19 +19,29 @@
                 <div class="col-sm-6 invoice-col">
                     <h1 class="h5 mb-3">Infos de RDV</h1>
                     <ul>
-                        <li><strong>Code RDV :      {{$rendezvous->code_rdv}}</strong></li>
-                        <li>Filière :</li>
-                        <li>Lieu :</li>
-                        <li>Jour : </li>
-                        <li>Heure : {{$rendezvous->time->time}}</li>
+                        <li><strong>Code RDV :</strong></li>
+                        <li>Filière: {{$rendezvous->time->date->lieu->filiere->nom_fr}}</li>
+                        <li>Lieu: {{$rendezvous->time->date->lieu->nom_fr}}</li>
+                        <li>Jour:</li>
+                        <li>Heure:</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 invoice-col">
+                    <h1 class="h5 mb-3" style="padding-bottom:25px"></h1>
+                    <ul class="center">
+                        <li><strong>RDV-{{$rendezvous->code_rdv}}</strong></li><br>
+                        <li></li><br>
+                        <li></li>
+                        <li>{{$rendezvous->time->date->date}}</li>
+                        <li>{{$rendezvous->time->time}}</li>
                     </ul>
                 </div>
                 <div class="col-sm-6 invoice-col" style="direction: rtl">
                     <h1 class="h5 mb-3">معلومات الموعد</h1>
                     <ul>
-                        <li><strong>رقم الموعد :</strong></li>
-                        <li>الشعبة:</li>
-                        <li>المكان :</li>
+                        <li><strong>رقم الموعد:</strong></li>
+                        <li>الشعبة: {{$rendezvous->time->date->lieu->filiere->nom_ar}}</li>
+                        <li>المكان : {{$rendezvous->time->date->lieu->nom_ar}}</li>
                         <li>اليوم :</li>
                         <li>الساعة :</li>
                     </ul>
@@ -39,32 +49,43 @@
             </div>
             <div class="form">
                 <div class="col-sm-6 invoice-col">
-                    <h1 class="h5 mb-3">Infos personnelle</h1>
+                    <h1 class="h5 mb-3">Infos prsnl</h1>
                     <ul>
                         <li><strong>CIN :</strong></li>
                         <li>CNE :</li>
-                        <li>Nom :</li>
-                        <li>Prénom :</li>
+                        <li>Nom : {{$rendezvous->nom_fr}}</li>
+                        <li>Prénom : {{$rendezvous->prenom_fr}}</li>
                         <li>Téléphone :</li>
                         <li>E-mail :</li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 invoice-col">
+                    <h1 class="h5 mb-3" style="padding-bottom:25px"></h1>
+                    <ul class="center">
+                        <li><strong>{{$rendezvous->cin}}</strong></li>
+                        <li>{{$rendezvous->cne}}</li><br>
+                        <li></li><br>
+                        <li></li>
+                        <li>{{$rendezvous->telephone}}</li>
+                        <li>{{$rendezvous->email}}</li>
                     </ul>
                 </div>
                 <div class="col-sm-7 invoice-col" style="direction: rtl">
                     <h1 class="h5 mb-3">المعلومات الشخصية</h1>
                     <ul>
-                        <li><strong>رقم البطاقة الوطنية :</strong></li>
-                        <li>رقم المسار :</li>
-                        <li>الاسم العائلي :</li>
-                        <li>الاسم الشخصي :</li>
-                        <li>الهاتف :</li>
-                        <li>البريد الالكتروني :</li>
+                        <li><strong>البطاقة الوطنية:</strong></li>
+                        <li>رقم المسار:</li>
+                        <li>النسب: {{$rendezvous->nom_ar}}</li>
+                        <li>الاسم: {{$rendezvous->prenom_ar}}</li>
+                        <li>الهاتف:</li>
+                        <li>الإيميل:</li>
                     </ul>
                 </div>
             </div>
         </div>
         <div>
-            <a class="btn btn-primary" href="{{url('/')}}">عودة</a>
-            <button class="btn btn-primary" onclick="imprimerPage()">طباعة</button>
+            <button class="btn btn-primary" onclick="imprimerPage()">Imprimer</button>
+            <a class="btn btn-primary" href="{{url('/')}}">Retourne</a>
         </div>
     </section>
     

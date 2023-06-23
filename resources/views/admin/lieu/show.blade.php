@@ -54,6 +54,7 @@
 											<th width="100">ID</th>
 											<th>Nom_fr</th>
 											<th>Nom_ar</th>
+											<th>filière</th>
 											<th width="100">Action</th>
 										</tr>
 									</thead>
@@ -63,6 +64,7 @@
 											<td>{{$lieu->id}}</td>
 											<td>{{$lieu->nom_fr}}</td>
 											<td>{{$lieu->nom_ar}}</td>
+											<td>{{$lieu->filiere->nom_fr}}<br>{{$lieu->filiere->nom_ar}}</td>
 											<td>
 												<a href="{{url('edit_lieu', $lieu->id)}}" class="text-success w-4 h-4 mr-1">
 													<svg class="filament-link-icon w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

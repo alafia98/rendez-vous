@@ -50,7 +50,16 @@
                                                 <label for="nom_ar">Nom en Arabe</label>
                                                 <input value="{{$lieu->nom_ar}}" type="text" name="nom_ar" id="nom_ar" class="form-control" style="color: black">	
                                             </div>
-                                        </div>									
+                                        </div>	
+                                        <div class="col-md-6">
+                                            <label for="id_fil">Filière</label>
+                                            <select name="id_fil" id="id_fil" class="form-control" style="color:white">
+                                                <option selected>Ajouter la filière</option>
+                                                @foreach ($filiere as $filiere)
+                                                    <option selected value="{{$filiere->id}}">{{$filiere->nom_fr}} / {{$filiere->nom_ar}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>	
                                     </div>
                                 </div>							
                             </div>

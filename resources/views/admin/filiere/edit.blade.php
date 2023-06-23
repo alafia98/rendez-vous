@@ -23,7 +23,7 @@
 				<section class="content-header">					
 					<div class="container-fluid my-2">
 						<div class="row mb-2">
-							<div class="col-sm-6" style="margin: 20px 0;">
+							<div class="col-sm-6" style="margin: 10px 0;">
 								<h1 style="font-size: 1.7rem;">Modifier une Filière</h1>
 							</div>
 						</div>
@@ -51,18 +51,10 @@
                                                 <input value="{{$filiere->nom_ar}}" type="text" name="nom_ar" id="nom_ar" class="form-control" style="color: black">	
                                             </div>
                                         </div>									
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="id_lieu">Lieu</label>
-                                        <select name="id_lieu" id="id_lieu" class="form-control" style="color:white">
-                                            @foreach ($lieu as $lieu)
-                                            <option selected value="{{$lieu->id}}">{{$lieu->nom_fr}} / {{$lieu->nom_ar}}</option>
-                                            @endforeach
-                                        </select>
                                     </div>									
                                 </div>
-                                </div>							
                             </div>
+                            
                             <div class="pb-5 pt-3">
                                 <button class="btn btn-primary" type="submit">Modifier</button>
                                 <a href="{{url('show_filiere')}}" class="btn btn-primary">Dos</a>

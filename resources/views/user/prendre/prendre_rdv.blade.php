@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 @include('user.css')
 <body>
     @include('user.navbar')
@@ -17,85 +17,86 @@
             <div class="body">
                 <div class="card1">
                     <div>
-                        <label for="prenom_fr">الإسم بالفرنسية :</label>
-                        <input type="text" name="prenom_fr" required>
-                    </div>
-                    <div>
-                        <label for="nom_fr"> النسب بالفرنسية :</label>
+                        <label for="nom_fr">Nom FR :</label>
                         <input type="text" name="nom_fr" required>
                     </div>
                     <div>
-                        <label for="prenom_ar">الإسم بالعربية :</label>
-                        <input type="text" name="prenom_ar" required>
-                    </div>
+                        <label for="prenom_fr">Prénom FR :</label>
+                        <input type="text" name="prenom_fr" required>
+                    </div>                                    
                     <div>
-                        <label for="nom_ar">النسب بالعربية :</label>
+                        <label for="nom_ar">Nom AR :</label>
                         <input type="text" name="nom_ar" required>
                     </div>
                     <div>
-                        <label for="cin">رقم البطاقة الوطنية :</label>
+                        <label for="prenom_ar">Prénom AR :</label>
+                        <input type="text" name="prenom_ar" required>
+                    </div>
+                    <div>
+                        <label for="cin">Numéro CIN:</label>
                         <input type="text" name="cin" required>
                     </div>
                     <div>
-                        <label for="cne">رقم المسار :</label>
+                        <label for="cne">Numéro CNE :</label>
                         <input type="text" name="cne" required>
                     </div>
                     <div>
-                        <label for="email">البريد الإلكتروني :</label>
+                        <label for="email">Addresse email :</label>
                         <input type="email" name="email" required>
                     </div>
                     <div>
-                        <label for="telephone">رقم الهاتف :</label>
+                        <label for="telephone">N° téléphone :</label>
                         <input type="number" name="telephone" required>
                     </div>
+                    
                     <div>
-                        <label>الشعبة : </label>
+                        <label>Filière :</label>
                         <select name="id_fil" id="filiere">
-                            <option value=''>اختيار شعبة</option>
+                            <option value=''>Séléctionner</option>
                             @foreach ($filieres as $filiere)
-                                <option value="{{$filiere->id}}">{{$filiere->nom_ar}}</option>
+                                <option value="{{$filiere->id}}">{{$filiere->nom_fr}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div>
-                        <label>المكان : </label>
+                        <label>Lieu : </label>
                         <select name="id_lieu" id="lieu">
-                            <option value=''>اختيار مكان</option>
+                            <option value=''>Séléctionner</option>
                         </select>
                     </div>
                     <div>
-                        <label>اليوم : </label>
+                        <label>Jour : </label>
                         <select name="id_date" id="date">
-                            <option value=''>اختيار اليوم</option>
+                            <option value=''>Séléctionner</option>
                         </select>
                     </div>
                     <div>
-                        <label>الساعة : </label>
+                        <label>Heure : </label>
                         <select name="id_time" id="time">
-                            <option value=''>اختيار ساعة</option>
+                            <option value=''>Séléctionner</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="card2">
-                    <h4>الوثائق المطلوبة للتسجيل</h4>
+                    <h4>Documents requis pour l'inscription</h4>
                     <ol>
-                        <li>مطبوع التسجيل.</li>
-                        <li>شهادة البكالوريا الأصلية.</li>
-                        <li>نسخة مـن شهادة البكالوريا.</li>
-                        <li>نسخـة من عقد الازدياد.</li>
-                        <li>نسخـة من بطاقة التعريف الوطنية.</li>
-                        <li>أربعة صــور للتعـريف.</li>
-                        <li>ظرف يحمل طابعا بريديا واسـم الطالب وعـنوانه.</li>
-                        <li>كشف النقط لسنة البكالوريا الأصلي مع نسخة منه.</li>
-                        <li>الوصل الذي يثبت التسجيل القبلي.</li>
-                        <li>الوصل الذي يثبت أخذ الموعد.</li>
+                        <li>Impression d'enregistrement.</li>
+                        <li>Certificat original du baccalauréat.</li>
+                        <li>Une copie du certificat du baccalauréat.</li>
+                        <li>Une copie du contrat d'augmentation.</li>
+                        <li>Une copie de la carte d'identité nationale.</li>
+                        <li>Quatre photos pour identification.</li>
+                        <li>Une enveloppe portant un timbre-poste et le nom et l'adresse de l'étudiant.</li>
+                        <li>Relevé de points pour l'année du baccalauréat original avec une copie.</li>
+                        <li>Le reçu prouvant la pré-inscription.</li>
+                        <li>Le reçu prouvant que le rendez-vous a été pris.</li>
                     </ol>
                 </div>
             </div>
 
             <div class="button">
-                <button class="btn btn-primary" type="submit">تأكيد</button>
+                <button class="btn btn-primary" type="submit">Confirmer</button>
             </div>
         </form>
     </section>

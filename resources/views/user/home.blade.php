@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar", dir="rtl">
+<html lang="fr">
 @include('user.css')
 <body>
     @include('user.navbar')
