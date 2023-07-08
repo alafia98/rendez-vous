@@ -37,7 +37,7 @@ class HomeController extends Controller
             return redirect('redirect');
         } else {
             $date = Date::all();
-            return view('user.home', compact('date'));
+            return view('user.home_ar', compact('date'));
         }
     }  
     public function logout() {
@@ -75,7 +75,7 @@ class HomeController extends Controller
         return response()->json($dates);
     }
     public function getTimes_ar($idDate) {
-        $times = Time::where('id_date', $idDate)->get();
+        $times = Time::where('id_date', $idDate)->limit(3)->get();
         return response()->json($times);
     }
 
@@ -91,9 +91,14 @@ class HomeController extends Controller
         $rendezvous->telephone = $request->telephone;
         $rendezvous->email = $request->email;
         $rendezvous->id_time = $request->id_time;
+        $count = Rendezvous::where('id_time', $request->id_time)->count();
+        if ($count >= 20) {
+            return redirect()->back()->with('message', 'Vous avez déjà pris trois rendez-vous pour cette date.');
+        }
         $rendezvous->save();
-        return redirect()->route('user.prendre.confirmation', $rendezvous->id) ->with('message', 'Filière Created Successfully');
-    }
+            return redirect()->route('user.prendre.confirmation', $rendezvous->id) ->with('message', 'Filière Created Successfully');
+        }
+
     public function create_rdv_ar(Request $request) {
         $rendezvous = new Rendezvous;
         $rendezvous->code_rdv = Helper::IDGenerator(new Rendezvous, 'code_rdv', 4, '');
@@ -118,15 +123,52 @@ class HomeController extends Controller
     public function search(Request $request) {
         $codeRdv = $request->input('code_rdv');
         $cin = $request->input('cin');
-        $rendezvous = Rendezvous::query();
-        if ($codeRdv) {
-            $rendezvous->where('code_rdv', $codeRdv);
-        }
-        if ($cin) {
-            $rendezvous->where('cin', $cin);
-        }
-        $results = $rendezvous->get();
 
-        return view('user.gerer.search', compact('results'));
+        if ($codeRdv) {
+            $rendezvous = Rendezvous::where('code_rdv', $codeRdv)->first();
+            
+            if ($rendezvous) {
+                return redirect()->route('user.prendre.confirmation', ['id' => $rendezvous->id]);
+            } else {
+                return back()->with('error', 'Rendez-vous introuvable');
+            }
+        }
+        
+        if ($cin) {
+            $rendezvous = Rendezvous::where('cin', $cin)->first();
+            
+            if ($rendezvous) {
+                return redirect()->route('user.prendre.confirmation', ['id' => $rendezvous->id]);
+            } else {
+                return back()->with('error', 'Rendez-vous introuvable');
+            }
+        }
+        return view('user.gerer.search');
+    }
+
+    public function search_ar(Request $request) {
+        $codeRdv = $request->input('code_rdv');
+        $cin = $request->input('cin');
+
+        if ($codeRdv) {
+            $rendezvous = Rendezvous::where('code_rdv', $codeRdv)->first();
+            
+            if ($rendezvous) {
+                return redirect()->route('user.prendre.confirmation', ['id' => $rendezvous->id]);
+            } else {
+                return back()->with('error', 'Rendez-vous introuvable');
+            }
+        }
+        
+        if ($cin) {
+            $rendezvous = Rendezvous::where('cin', $cin)->first();
+            
+            if ($rendezvous) {
+                return redirect()->route('user.prendre.confirmation', ['id' => $rendezvous->id]);
+            } else {
+                return back()->with('error', 'Rendez-vous introuvable');
+            }
+        }
+        return view('user.gerer.search_ar');
     }
 }

@@ -3,7 +3,7 @@
   <div class="nav collapse navbar-collapse" id="navbarSupportedContent">
     <a href="{{url('/home_ar')}}">الصفحة الرئيسية</a>
     <a href="{{url('prendre_rdv_ar')}}">أخذ موعد</a>
-    <a href="#">تتبع مواعيدي</a>
+    <a href="{{url('search_ar')}}">تتبع مواعيدي</a>
   </div>
   <a href="{{url('/')}}"  class="nav-link" style="margin-left:5%;">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">

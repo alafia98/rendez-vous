@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="contenu">
-            <div class="form">
+            <div class="form form1">
                 <div class="col-sm-6 invoice-col">
                     <h1 class="h5 mb-3">Infos de RDV</h1>
                     <ul>
@@ -47,7 +47,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="form">
+            <div class="form form2">
                 <div class="col-sm-6 invoice-col">
                     <h1 class="h5 mb-3">Infos prsnl</h1>
                     <ul>

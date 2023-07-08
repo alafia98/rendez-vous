@@ -12,7 +12,7 @@
     <swiper-slide>
         <h3>Filière: {{$date->lieu->filiere->nom_fr}}</h3>
         <h3>Lieu: {{$date->lieu->nom_fr}}</h3>
-        <h3>Filière: {{$date->date}}</h3>
+        <h3>Date: {{$date->date}}</h3>
         <a class="btn" href="{{url('prendre_rdv')}}">Prendre RDV</a>
     </swiper-slide>
 @endforeach

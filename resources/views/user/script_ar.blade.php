@@ -1,7 +1,7 @@
 <footer>
     <div>
         <a href="#">رقم الهاتف: +212 539 97 90 53</a>
-        <a href="#">البريد الإلكتروني: flsht.contact@gmail.com</a>
+        <a href="#">البريد الإلكتروني: flsht.contact @gmail.com</a>
         <a href="#">العنوان: Tétouan B.P.210 Martil Tétouan ,Maroc</a>
     </div>
 </footer>

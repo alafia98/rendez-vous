@@ -30,7 +30,7 @@
             </div>
         </form>
 
-        <table>
+        {{-- <table>
             <thead>
                 <tr>
                     <th>Code RDV</th>
@@ -51,7 +51,7 @@
                 </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table> --}}
     </section>
 
     @include('user.script')

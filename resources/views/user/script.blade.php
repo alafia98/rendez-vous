@@ -1,7 +1,7 @@
 <footer>
     <div>
         <a href="#">Téléphone: +212 539 97 90 53</a>
-        <a href="#">E-mail: flsht.contact@gmail.com</a>
+        <a href="#">E-mail: flsht.contact @gmail.com</a>
         <a href="#">Addresse: Tétouan B.P.210 Martil Tétouan ,Maroc</a>
     </div>
 </footer>
@@ -11,6 +11,17 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    const toggleBtn = document.querySelector('.navbar-toggler')
+    const toggleBtnIcon = document.querySelector('.navbar-toggler span')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+    toggleBtn.onclick = function() {
+        dropDownMenu.classList.toggle('open')
+        const isOpen = dropDownMenu.classList.contains('open')
+    }
+</script>
+
 <script>
     $(document).ready(function () {
         $('#filiere').change(function () {

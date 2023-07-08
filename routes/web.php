@@ -44,8 +44,6 @@ Route::get('/get-times/{id_date}', [HomeController::class, 'getTimes']);
 Route::get('/confirmation/{id}', [HomeController::class, 'confirmation'])->name('user.prendre.confirmation');
 
 
-
-
 Route::get('/show_lieu', [AdminController::class, 'show_lieu']);
 Route::get('/show_filiere', [AdminController::class, 'show_filiere']);
 Route::get('/show_date', [AdminController::class, 'show_date']);
@@ -93,3 +91,4 @@ Route::get('/delete_plan/{id}', [AdminController::class, 'delete_plan']);
 Route::get('/delete_rendezvous/{id}', [AdminController::class, 'delete_rendezvous']);
 
 Route::get('/search', [HomeController::class, 'search']);
+Route::get('/search_ar', [HomeController::class, 'search_ar']);

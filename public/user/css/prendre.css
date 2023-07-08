@@ -68,7 +68,6 @@ section form .button .btn{
     margin-left: 5%;
 }
 
-
 section .search {
     background-image: linear-gradient(to right, #92ccff, white, #92ccff);
     padding: 5%;
@@ -99,4 +98,76 @@ section .search .main label {
     font-style: italic;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     margin: 3% auto -6% auto;
+}
+  
+@media (max-width: 1050px) {
+    section {
+        height: 70vh;
+    }
+    section form {
+        width:90vw;
+        height: 100%;
+    }  
+    section form .body .card1 div {
+        width: 35vw;
+    } 
+    section form .button .btn{
+        width: 30vw;
+        margin-top: 5vh;
+    }
+    section .search {
+        flex-direction: column;
+    }
+}
+  
+@media (max-width: 576px) {
+    section {
+        height: 100vh;
+    }
+    section form {
+        width:90vw;
+        height: 100vh;
+    }  
+    section form .body {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    section form .body .card1 div {
+        width: 80vw;
+        margin: .5% auto;
+    }
+    section form .body .card1 div select {
+        width:45%;
+    }    
+    section form .button .btn{
+        width: 30vw;
+    }
+    section form .body .card2 h4 {
+        margin-top: 10%;
+    }
+    section form .body .card2 ol li {
+        font-size:1rem;
+        text-align: left;
+    }
+    section form .button .btn{
+        width: 50vw;
+        margin: 0 auto;
+    }
+    section .search {
+        flex-direction: column;
+        width:90%;
+        height: 40%;
+        margin-top: -50%;
+    }
+    section .search .main div{
+        margin: 5px auto;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    section .search .main label {
+        font-weight:bold;
+    }
 }
