@@ -2,7 +2,7 @@
     <div class="home-card">
         <img src="{{asset('user/img/facultélogo.png')}}" alt="logo">
         <h1>Bienvenue sur le site de prise de rendez-vous de l'Université Abdelmalek Essaadi des Lettres et Sciences Humaines.</h1>
-        <a href="/login" class="btn">Espace d'administrateur</a>
+        {{-- <a href="/login" class="btn">Espace d'administrateur</a> --}}
     </div>
 
     <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use App\Models\User;
 use App\Models\Lieu;
 use App\Models\Filiere;
@@ -81,7 +82,8 @@ class HomeController extends Controller
 
     public function create_rdv(Request $request) {
         $rendezvous = new Rendezvous;
-        $rendezvous->code_rdv = Helper::IDGenerator(new Rendezvous, 'code_rdv', 4, '');
+        $rendezvous->code_rdv = mt_rand(10000,99999);
+        // $rendezvous->code_rdv = Str::random(8);
         $rendezvous->cin = $request->cin;
         $rendezvous->cne = $request->cne;
         $rendezvous->nom_fr = $request->nom_fr;
@@ -97,7 +99,7 @@ class HomeController extends Controller
         }
         $rendezvous->save();
             return redirect()->route('user.prendre.confirmation', $rendezvous->id) ->with('message', 'Filière Created Successfully');
-        }
+    }
 
     public function create_rdv_ar(Request $request) {
         $rendezvous = new Rendezvous;

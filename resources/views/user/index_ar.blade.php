@@ -2,7 +2,7 @@
     <div class="home-card">
         <img src="{{asset('user/img/facultélogo.png')}}" alt="logo">
         <h1>أهلا بكم في تطبيق حجز المواعيد بكلية الآداب والعلوم الإنسانية</h1>
-        <a href="/login" class="btn">فضاء المسؤول</a>
+        {{-- <a href="/login" class="btn">فضاء المسؤول</a> --}}
     </div>
 
     <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"

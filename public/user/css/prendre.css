@@ -49,13 +49,13 @@ section form .body .card1 div label {
 }
 
 section form .body .card1 div select {
-    width:55%;
+    width:40%;
 }
 
-section form .body .card2 ol li {
+section form .body .card2 ul li {
     font-size:1.2rem;
     text-align: left;
-    margin-left: 10%;
+    margin: 2% auto 2% 10%;
 }
 
 section form .button .btn{
@@ -99,6 +99,12 @@ section .search .main label {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
     margin: 3% auto -6% auto;
 }
+
+@media (max-width: 1500px) {
+    section form .body .card1 div select {
+        width:55%;
+    }
+}
   
 @media (max-width: 1050px) {
     section {
@@ -118,6 +124,7 @@ section .search .main label {
     section .search {
         flex-direction: column;
     }
+    
 }
   
 @media (max-width: 576px) {

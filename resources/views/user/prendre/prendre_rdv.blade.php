@@ -80,18 +80,15 @@
 
                 <div class="card2">
                     <h4>Documents requis pour l'inscription</h4>
-                    <ol>
-                        <li>Impression d'enregistrement.</li>
-                        <li>Certificat original du baccalauréat.</li>
-                        <li>Une copie du certificat du baccalauréat.</li>
-                        <li>Une copie du contrat d'augmentation.</li>
-                        <li>Une copie de la carte d'identité nationale.</li>
-                        <li>Quatre photos pour identification.</li>
-                        <li>Une enveloppe portant un timbre-poste et le nom et l'adresse de l'étudiant.</li>
-                        <li>Relevé de points pour l'année du baccalauréat original avec une copie.</li>
-                        <li>Le reçu prouvant la pré-inscription.</li>
-                        <li>Le reçu prouvant que le rendez-vous a été pris.</li>
-                    </ol>
+                    <ul>
+                        <li>Reçu du rendez-vous.</li>
+                        <li>Reçu de Pré-inscription.</li>
+                        <li>Diplôme Baccalauréat original.</li>
+                        <li>2 copies Baccalauréat.</li>
+                        <li>2 copies CIN.</li>
+                        <li>2 photos.</li>
+                        <li>2 enveloppe timbré.</li>
+                    </ul>
                 </div>
             </div>
 

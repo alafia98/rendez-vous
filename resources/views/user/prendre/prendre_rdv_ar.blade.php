@@ -79,18 +79,15 @@
 
                 <div class="card2">
                     <h4>الوثائق المطلوبة للتسجيل</h4>
-                    <ol>
-                        <li style="text-align: right">مطبوع التسجيل.</li>
-                        <li style="text-align: right">شهادة البكالوريا الأصلية.</li>
-                        <li style="text-align: right">نسخة مـن شهادة البكالوريا.</li>
-                        <li style="text-align: right">نسخـة من عقد الازدياد.</li>
-                        <li style="text-align: right">نسخـة من بطاقة التعريف الوطنية.</li>
-                        <li style="text-align: right">أربعة صــور للتعـريف.</li>
-                        <li style="text-align: right">ظرف يحمل طابعا بريديا واسـم الطالب وعـنوانه.</li>
-                        <li style="text-align: right">كشف النقط لسنة البكالوريا الأصلي مع نسخة منه.</li>
-                        <li style="text-align: right">الوصل الذي يثبت التسجيل القبلي.</li>
-                        <li style="text-align: right">الوصل الذي يثبت أخذ الموعد.</li>
-                    </ol>
+                    <ul>
+                        <li>إيصال استلام الموعد</li>
+                        <li>إيصال التسجيل المسبق</li>
+                        <li>شهادة البكالوريا الأصلية</li>
+                        <li>نسختان من البكالوريا </li>
+                        <li>نسختان من بطاقة التعريف الوطنية</li>
+                         <li>صورتان </li>
+                        <li>ظرفان متنبران</li>
+                    </ul>
                 </div>
             </div>
 

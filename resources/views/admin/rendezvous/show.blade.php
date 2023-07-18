@@ -17,7 +17,6 @@
 							<div class="col-sm-4" style="margin:20px auto">
 								<h1 style="font-size: 1.7rem">Les Rendez-vous</h1>
 							</div>
-							<input type="text" style="width: 30%; margin:15px auto; text-align:center;" name="table_search" class="form-control" placeholder="Chercher ici ...">
 							<div class="col-sm-4 text-right" style="margin:20px auto">
 								<a href="{{url('create_rendezvous')}}" class="btn btn-primary">Nouveau Rendez-vous</a>
 							</div>
@@ -33,7 +32,7 @@
 							<div class="card-header">
 								<div class="card-tools">
 									<div class="input-group input-group" style="width: 250px;">
-										<input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+										<input type="text" name="table_search" class="form-control float-right" placeholder="Chercher">
 					
 										<div class="input-group-append">
 										  <button type="submit" class="btn btn-default">
